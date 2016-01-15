@@ -28,14 +28,17 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     };
 
     $scope.deleteListing = function(listing) {
+
+      /*Find location of currently selected listing and delete it*/
       var index = $scope.listings.indexOf(listing);
       $scope.listings.splice(index,1);
     };
 
     $scope.showDetails = function(listing) {
 
-      var index = $scope.listings.indexOf(listing);
+      /*Find location of currently selected listing and show its location details*/
 
+      var index = $scope.listings.indexOf(listing);
       $scope.detailedInfo = {
 
         name: $scope.listings[index].name,
