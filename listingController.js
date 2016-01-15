@@ -13,6 +13,16 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.addListing = function() {
       $scope.listings.push($scope.newListing);
       $scope.newListing = '';
+      $scope.listings.sort(function(e1,e2) {
+        if(e1.code > e2.code) {
+          return 1;
+        }
+        if (e1.code < e2.code) {
+          return -1;
+        }
+        return 0;
+      })
+
     };
     $scope.deleteListing = function(index) {
       $scope.listings.splice(index, 1);
