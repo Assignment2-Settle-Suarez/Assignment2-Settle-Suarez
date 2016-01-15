@@ -30,7 +30,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       $scope.listings.splice(index,1);
     };
 
-    $scope.showDetails = function(index) {
+    $scope.showDetails = function(listing) {
+
+      var index = $scope.listings.indexOf(listing);
 
       $scope.detailedInfo = {
 
