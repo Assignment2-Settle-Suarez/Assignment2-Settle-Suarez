@@ -4,13 +4,17 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <title>UF Directory App</title>
 </head>
 
 <body ng-app="directoryApp">
   <div class="container">
-    <div class="row">
-      <img src="http://content.sportslogos.net/logos/31/675/full/9ru6ujcdibakxn9gfege.png" width="200px" height="200px">
-      <h1>UF Directory App</h1>
+    <div class="row" class="header">
+      <img class="logo" src="http://content.sportslogos.net/logos/31/675/full/9ru6ujcdibakxn9gfege.png" width="115px" height="100px">
+      <span class="title-divider"></span>
+      <a href="index.html">
+        <h1 class="title">Directory</h1>
+      </a>
     </div>
     <div class="row" ng-controller="ListingsController">
       <div class="col-md-6">
@@ -54,7 +58,7 @@
 
         <!-- Button to open modal -->
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
-          <span class="glyphicon glyphicon-plus"></span>
+          Add Listing <span class="glyphicon glyphicon-plus"></span>
         </button>
 
         <!-- Modal to input new listing info -->
