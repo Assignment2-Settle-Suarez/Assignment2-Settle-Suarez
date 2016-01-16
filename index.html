@@ -16,9 +16,7 @@
       <div class="col-md-6">
         <div class="input-group" id="searchBar">
           <!--
-
-                Implement a way to filter through listings using the search bar
-
+                Filters through table using a filter in ng-repeat
               -->
           <span class="input-group-addon" id="sizing-addon1">
             <span class="glyphicon glyphicon-search"></span>
@@ -34,11 +32,8 @@
               <th></th>
             </tr>
             <!--
-
-                  Fill in the rest of the table:
-                      * populate the rows with the code and name of each listing
-                      * include a way to remove individual listings
-
+                  ng-repeat directive populates table
+                  Delete button in row removes corresponding listing 
                 -->
             <tr ng-repeat="listing in listings | filter:searchText">
               <td>{{listing.code}}</td>
@@ -57,11 +52,12 @@
           </table>
         </div>
 
-        <!-- <h3>Add Listing</h3> -->
+        <!-- Button to open modal -->
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
 
+        <!-- Modal to input new listing info -->
         <div id="myModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -100,14 +96,13 @@
           </div>
         </div>
       </div>
+
+
       <div class="col-md-6">
         <div class="jumbotron">
           <h2>Detailed Information</h2>
           <!--
-
-              Include a way to display detailed information about an individual listing:
-                   * consider how to use ng-click within the the table to implement this feature
-
+              Button in table row populates this jumbotron for corresponding listing
              -->
           <p>Name: {{ detailedInfo.name }} </p>
           <p>Building Code: {{ detailedInfo.code }} </p>
